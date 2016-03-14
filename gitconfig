@@ -1,0 +1,86 @@
+[user]
+	name = bshen
+	email = bshen@marvell.com
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    
+[core]
+    editor = vim -X
+    pager = less -FXRS
+
+[alias]
+	addi = add -i
+	rmc = rm --cached
+
+    co = checkout
+    cos = checkout --track git-svn -b
+    cob = checkout -b
+    cod = checkout --
+
+    ci = commit -a
+    cia = commit --amend
+
+    di = diff
+    st = status
+	stm = status -uno
+
+    br = branch
+    bra = branch -a
+    brd = branch -D
+
+    re = remote
+
+    lg = log --pretty="%Cblue[%Creset%h%Cblue]%Cgreen<%an>%Creset%s%Cred(%ad)" --date=short --abbrev-commit -10
+    lga = log --pretty="%Cblue[%Creset%h%Cblue]%Cgreen<%an>%Creset%s%Cred(%ad)" --date=short --abbrev-commit
+    lgp = log -p 
+	lgs = log --stat -1
+
+    bl = blame
+    so = show
+    bs = bisect
+
+    rsh = reset --hard
+    rss = reset --soft
+	rs = reset HEAD
+
+    arc = archive --format=tar
+    rb = rebase -i
+
+    fp= format-patch
+    ap= apply --reject
+    gp= grep -n
+    cp= cherry-pick
+	mg= merge
+	d = difftool
+
+#delete dangling list completely
+#git reflog expire --expire-unreachable=0 --all
+#git gc --prune=0
+
+#[github=import]
+#    remote = origin
+[mrege]
+    tool = vimdiff
+#    spull = svn rebase
+#    spush = svn dcommit
+#    sfetch = svn fetch
+#    cdf = diff-- cached
+#    ll = log-- graph-- decorate-- pretty = online-- abbrev - commit
+#    lla = log-- graph-- decorate-- pretty = online-- abbrev - commit-- all
+#    ls = ls - files
+#    pick = add - p
+#    go = rebase-- continue
+#    skip = rebase-- skip
+#    tip = log - 1
+#    wdf = diff-- color - words
+#    wcdf = diff-- color - words-- cached
+#    wshow = show-- color - words amend = commit - s-- amend
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[tig "bind"]
+    generic = D !git difftool --tool=vimdiff --no-prompt %(commit)^ %(commit)
