@@ -18,7 +18,43 @@ call vundle#rc()
 "Plugin 'easymotion/vim-easymotion'
 "let g:EasyMotion_do_shade = 0
 
-filetype plugin indent on     " required
+Plugin 'tomasr/molokai'
+" Javascript syntax hightlight
+syntax enable
+" Set syntax highlighting for specific file types
+autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd Syntax javascript set syntax=jquery
+" Color scheme
+colorscheme molokai
+highlight NonText guibg=#060606
+highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+
+Plugin 'majutsushi/tagbar'
+let g:tagbar_width=35
+let g:tagbar_autofocus=1
+nmap tt <ESC> :TagbarToggle<CR>
+
+Plugin 'kien/ctrlp.vim'
+let g:ctrlp_map = '<c-p>'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+let g:ctrlp_user_command = 'find %s -type f' " MacOSX/Linux
+
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'tpope/vim-fugitive'
+set laststatus=2 " Always display the status line
+set statusline+=%{fugitive#statusline()} "  Git Hotness
+
+filetype plugin indent on " required
 
 if(has("win32") || has("win95") || has("win64") || has("win16"))
     let g:iswindows=1
@@ -61,39 +97,51 @@ set background=dark
 
 set nocompatible
 set backspace=2
-
-"set runtimepath+=~/.vim/plugin
-"set runtimepath+=~/.vim/after
-"set runtimepath+=~/.vim/autoload
-"set runtimepath+=~/.vim/bin
-"set runtimepath+=~/.vim/doxygen-support
-"set runtimepath+=~/.vim/plugin
-"set runtimepath+=~/.vim/syntax
-"set runtimepath+=~/.vim/tags
+set showcmd
 
 "set tab expression
 set shiftwidth=4
+set shiftround
 set ai
 set tabstop=4
 set expandtab
 set cin
 
+set textwidth=80
+"set colorcolumn=+1
+
+set number
+set numberwidth=5
+
+set matchpairs+=<:>
+set hlsearch
+
+set tabpagemax=100
+
+set nocp
+
+set tags+=~/.vim/cpp_src/
+set tags+=tags;
+
+set mouse=n
+set history=100
+
+" Highlight current line
+"au WinLeave * set nocursorline nocursorcolumn
+"au WinEnter * set cursorline cursorcolumn
+"set cursorline cursorcolumn
+set cursorline
+
 syntax on
-colorscheme default
-
-
-"augroup ShellScript "auto-change file mode to 755 when saveing *.sh files
-"    autocmd!
-"    autocmd BufWritePost,FileWritePost *.sh !chmod 755 %
-"augroup END
 
 map <Esc><Esc> :w! <CR>
 map <Esc><BS> :q <CR>
 map L <ESC>:tabnext<CR>
 map H <ESC>:tabprev<CR>
 map <C-i> <ESC>:!
-map <C-t>n <ESC>:Texplore<CR>
+map <C-t>n <ESC>:tabnew <bar> CtrlP <CR>
 map <C-t>c <ESC>:tabclose<CR>
+map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 nmap + <C-W>+
 nmap - <C-W>-
 nmap <C-l>  <C-w>>
@@ -104,39 +152,6 @@ nmap vdir <ESC>:Vexplore<CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
 nnoremap <2-LeftMouse> : cstag <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-F>2 :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
-
-filetype on
-filetype plugin on
-filetype indent on
-
-""FOR Tlist
-"let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-""let Tlist_Auto_Open=1 
-"let Tlist_Auto_Update=1 
-"let Tlist_Enable_Fold_Column=1
-"let Tlist_Sort_Type = "name"
-"let Tlist_WinWidth = 30 
-"let Tlist_Exit_OnlyWindow = 1
-"let Tlist_Show_One_File=1  
-"let Tlist_Use_SingleClick = 1
-"nnoremap <silent> <F8> :Tlist<CR>
-
-set tabpagemax=100
-
-highlight Comment ctermfg=Green
-highlight Search term=reverse ctermbg=4 ctermfg=7
-highlight Normal ctermbg=black ctermfg=white
-
-map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
-
-set nocp
-filetype plugin on
-
-set tags+=~/.vim/cpp_src/
-set tags+=tags;
-
-set mouse=n
-set history=100
 
 fun! ShowFuncName()
   let lnum = line(".")
