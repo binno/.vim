@@ -18,17 +18,18 @@ call vundle#rc()
 "Plugin 'easymotion/vim-easymotion'
 "let g:EasyMotion_do_shade = 0
 
-Plugin 'tomasr/molokai'
-" Javascript syntax hightlight
-syntax enable
-" Set syntax highlighting for specific file types
-autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd Syntax javascript set syntax=jquery
-" Color scheme
-colorscheme molokai
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+"Plugin 'tomasr/molokai'
+"" Javascript syntax hightlight
+"syntax enable
+"" Set syntax highlighting for specific file types
+"autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+"autocmd BufRead,BufNewFile *.md set filetype=markdown
+"autocmd Syntax javascript set syntax=jquery
+"" Color scheme
+"colorscheme molokai
+"highlight NonText guibg=#060606
+"highlight Folded  guibg=#0A0A0A guifg=#9090D0
+colorscheme default 
 
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -153,12 +154,6 @@ nmap <C-w>w <ESC>:windo set wrap<CR>
 nnoremap <2-LeftMouse> : cstag <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-F>2 :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
 
-fun! ShowFuncName()
-  let lnum = line(".")
-  let col = col(".")
-  echohl ModeMsg
-  echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
-  echohl None
-  call search("\\%" . lnum . "l" . "\\%" . col . "c")
-endfun
-map F :call ShowFuncName() <CR>
+highlight Comment ctermfg=Green
+highlight Search term=reverse ctermbg=4 ctermfg=7
+highlight Normal ctermbg=black ctermfg=white
