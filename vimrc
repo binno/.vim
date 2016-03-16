@@ -140,7 +140,7 @@ map <Esc><BS> :q <CR>
 map L <ESC>:tabnext<CR>
 map H <ESC>:tabprev<CR>
 map <C-i> <ESC>:!
-map <C-t>n <ESC>:tabnew <bar> CtrlP <CR>
+map <C-t>n <ESC>:Texplore <bar> CtrlP<CR>
 map <C-t>c <ESC>:tabclose<CR>
 map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 nmap + <C-W>+
