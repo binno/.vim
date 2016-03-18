@@ -38,7 +38,7 @@ let g:ycm_confirm_extra_conf = 0
 Plugin 'majutsushi/tagbar'
 let g:tagbar_width=35
 let g:tagbar_autofocus=1
-nmap tt <ESC> :TagbarToggle<CR>
+nmap T <ESC> :TagbarToggle<CR>
 
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
@@ -131,7 +131,7 @@ set history=100
 "au WinLeave * set nocursorline nocursorcolumn
 "au WinEnter * set cursorline cursorcolumn
 "set cursorline cursorcolumn
-set cursorline
+"set cursorline
 
 syntax on
 
