@@ -102,7 +102,7 @@ set showcmd
 
 "set tab expression
 set shiftwidth=4
-set shiftround
+"set shiftround
 set ai
 set tabstop=4
 set expandtab
