@@ -38,7 +38,7 @@ let g:ycm_confirm_extra_conf = 0
 Plugin 'majutsushi/tagbar'
 let g:tagbar_width=35
 let g:tagbar_autofocus=1
-nmap T <ESC> :TagbarToggle<CR>
+nmap tt <ESC> :TagbarToggle<CR>
 
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
@@ -69,7 +69,7 @@ set fileencodings=ucs-bom,iso-8859,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 if(g:iswindows==1)
     source $VIMRUNTIME/delmenu.vim
     source $VIMRUNTIME/menu.vim
-    language messages zh_CN.utf-8
+    language messages zh_TW.utf-8
 endif
 
 if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
