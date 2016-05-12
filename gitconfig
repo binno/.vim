@@ -47,7 +47,7 @@
 	rs = reset HEAD
 
     #git arc --prefix=[dir name] HEAD -o [name].tar.gz
-    arc = archive --format=tar
+    arc = archive --format=tar.gz
     rb = rebase -i
 
     fp= format-patch
