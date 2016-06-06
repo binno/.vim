@@ -46,8 +46,8 @@
     rss = reset --soft
 	rs = reset HEAD
 
-    #git arc --prefix=[dir name] HEAD -o [name].tar.gz
-    arc = archive --format=tar.gz
+    #git arc --prefix=[dir name] HEAD |gzip > [name].tar.gz
+    arc = archive --format=tar
     rb = rebase -i
 
     fp= format-patch
