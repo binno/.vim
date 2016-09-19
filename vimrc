@@ -127,6 +127,8 @@ set tags+=tags;
 set mouse=n
 set history=100
 
+set vb t_vb=
+
 " Highlight current line
 "au WinLeave * set nocursorline nocursorcolumn
 "au WinEnter * set cursorline cursorcolumn
