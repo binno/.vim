@@ -154,7 +154,7 @@ nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
 nnoremap <2-LeftMouse> : cstag <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-F>2 :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
+"nnoremap <C-F>2 :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
 
 highlight Comment ctermfg=Green
 highlight Search term=reverse ctermbg=4 ctermfg=7
