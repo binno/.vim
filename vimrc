@@ -15,6 +15,8 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+"Plugin setting
+"
 "Plugin 'easymotion/vim-easymotion'
 "let g:EasyMotion_do_shade = 0
 
@@ -54,6 +56,18 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'tpope/vim-fugitive'
 set laststatus=2 " Always display the status line
 set statusline+=%{fugitive#statusline()} "  Git Hotness
+
+Plugin 'neovimhaskell/haskell-vim'
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+"let g:haskell_classic_highlighting = 1
+"let g:cabal_indent_section = 2
+
+"Plugin setting end
 
 filetype plugin indent on " required
 
