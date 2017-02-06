@@ -6,19 +6,7 @@ bindkey ^[w focus
 vbell off
 
 #pre-open dir
-chdir /home/bshen/
-screen -fn -t bash 0
-
-chdir /home/bshen/report/ 
-screen -fn -t report 1
-
-chdir /home/bshen/csim/Csim_PJ4/trunk/
-screen -fn -t csim 2
-
-chdir /home/bshen/csim/Csim_PJ4/trunk/prj/linux-gcc/v8
-screen -fn -t csim_build 3
-
-chdir /home/bshen/csim/Csim_PJ4/trunk/PLI/MTL_scripts/
-screen -fn -t trace 4
-
-chdir ~
+#chdir /home/bshen/
+#screen -fn -t bash 0
+#
+#chdir ~
