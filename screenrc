@@ -1,7 +1,7 @@
 #caption always "%{= k} %{= Y} [%n]%t @ %H %{-} %= %{= R} %l %{-} | %{= G} %Y-%m-%d %{-} "
 hardstatus alwayslastline " %{= k} %{= W} %-Lw%{= Bw}%n%f %t%{-}%+Lw %=| %0c:%s "
-bindkey ^[, prev
-bindkey ^[. next
+bindkey <, prev
+bindkey >. next
 bindkey ^[w focus 
 vbell off
 
