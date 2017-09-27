@@ -32,3 +32,8 @@ alias python='python -t'
 
 #ruby setting
 alias gems='gem search -r'
+
+#tmux setting
+alias tmuxls='tmux ls'
+alias tmuxat='tmux attach-session -t'
+
