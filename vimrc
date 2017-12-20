@@ -32,14 +32,14 @@ call vundle#rc()
 "highlight NonText guibg=#060606
 "highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
+"Plugin 'Valloric/YouCompleteMe'
+"let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf = 0
 
 Plugin 'majutsushi/tagbar'
-let g:tagbar_width=35
+let g:tagbar_width=30
 let g:tagbar_autofocus=1
-nmap tt <ESC> :TagbarToggle<CR>
+nmap <F2> :TagbarToggle<CR>
 
 "Plugin 'kien/ctrlp.vim'
 "let g:ctrlp_map = '<c-p>'
@@ -81,6 +81,8 @@ nmap tt <ESC> :TagbarToggle<CR>
 "let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 ""let g:haskell_classic_highlighting = 1
 ""let g:cabal_indent_section = 2
+
+Plugin 'tpope/vim-obsession'
 
 "Plugin setting end
 
@@ -130,7 +132,7 @@ set nocompatible
 set backspace=2
 set showcmd
 
-"set tab expression
+"set tab key expression
 set shiftwidth=4
 "set shiftround
 set ai
@@ -141,12 +143,13 @@ set cin
 set textwidth=80
 "set colorcolumn=+1
 
+"set tab page expression
+set tabpagemax=100
+
 set number
 set numberwidth=5
 
 set matchpairs+=<:>
-
-set tabpagemax=100
 
 set nocp
 
@@ -171,7 +174,7 @@ set cursorline
 
 syntax on
 
-map <Esc><Esc> :w! <CR>
+map <Esc><Esc> :w!<CR>
 map <Esc><BS> :q <CR>
 map L <ESC>:tabnext<CR>
 map H <ESC>:tabprev<CR>
@@ -186,14 +189,26 @@ nmap <C-h>  <C-w><
 nmap dir  <ESC>:Explore<CR>
 nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
+nmap mks <ESC>:mksession!<CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
-nnoremap <2-LeftMouse> : cstag <C-R>=expand("<cword>")<CR><CR>
+nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
+"nnoremap <2-LeftMouse> <C-w>} <C-w>w <C-w>T
+"nnoremap <2-LeftMouse> <C-w>} <C-w>k <C-w>T
+nnoremap <F5> <C-w>T
+nnoremap <Space><Space> :q<CR>
 "nnoremap <C-F>2 :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
-
+nmap ff :vimgrep /<c-r>=expand("<cword>")<cr>/ %<cr> !:copen <Enter>
 nmap F mx:call getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW')) <CR> %%b
 
-highlight Comment ctermfg=Green
-highlight Search term=reverse ctermbg=4 ctermfg=7
+let mapleader=","
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+vnoremap <leader>p "_dP
+
+set background=dark
+colorscheme elflord
+
+highlight Search term=reverse ctermbg=4 ctermfg=7                                                                                                                       
 highlight Normal ctermbg=black ctermfg=white
 
 highlight TabLine         term=bold cterm=bold   ctermbg=darkgrey ctermfg=white                                                                           
@@ -202,7 +217,8 @@ highlight TabLineFill     term=bold cterm=bold   ctermbg=black    ctermfg=darkgr
 
 highlight StatusLineNC    term=none cterm=none   ctermfg=darkgrey ctermbg=black                                                                           
 highlight StatusLine      term=none cterm=none   ctermfg=white    ctermbg=blue                                                                            
-set statusline=%4*%f\ %6*%m%4*\ %=%3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>                                                                                   
+set statusline=%4*%f\ %6*%m%4*\ %=%3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
+set laststatus=2
 highlight User1 ctermfg=red                                                                                                                               
 highlight User2 term=underline cterm=underline ctermfg=green                                                                                              
 highlight User3 term=underline cterm=underline ctermfg=yellow                                                                                             
@@ -210,9 +226,9 @@ highlight User4 term=underline cterm=underline ctermfg=white
 highlight User5 ctermfg=cyan                                                                                                                              
 highlight User6 ctermfg=white    
 
-highlight LineNr ctermfg=darkgray ctermbg=black                                                                                                           
-highlight Comment ctermfg=darkcyan ctermbg=black                                                                                                          
-highlight PreCondit ctermfg=red ctermbg=black                                                                                                             
-                                                                                                                                                          
+highlight LineNr ctermfg=darkgray ctermbg=black
+highlight Comment ctermbg=black
+highlight PreCondit ctermfg=red ctermbg=black
+
 highlight VertSplit cterm=none ctermfg=darkgray ctermbg=black                                                                                             
-set fillchars=vert:\│
+set fillchars=vert:\|

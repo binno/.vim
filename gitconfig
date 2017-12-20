@@ -1,8 +1,8 @@
 [push]
     default = simple
 [user]
-	name = bshen
-	email = Ruei.Yang.Shen@wdc.com
+	name = binno
+	email = binno@wdc.com
 
 [color]
     diff = auto
@@ -35,8 +35,8 @@
 
     re = remote
 
-    lg = log --pretty="%Cblue[%Creset%h%Cblue]%Cgreen<%an>%Creset%s%Cred(%ad)" --date=short --abbrev-commit -10
-    lga = log --pretty="%Cblue[%Creset%h%Cblue]%Cgreen<%an>%Creset%s%Cred(%ad)" --date=short --abbrev-commit
+    lg = log --pretty="%C(yellow)%h|%C(red)%ad|%C(green)%an:%C(reset)%s" --date=short --abbrev-commit -10
+    lga = log --pretty="%C(yellow)%h|%C(red)%ad|%C(green)%an:%C(reset)%s" --date=short --abbrev-commit
     lgp = log -p 
 	lgs = log --stat -1
 
