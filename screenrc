@@ -1,9 +1,15 @@
+termcapinfo xterm ti@:te@
 #caption always "%{= k} %{= Y} [%n]%t @ %H %{-} %= %{= R} %l %{-} | %{= G} %Y-%m-%d %{-} "
 hardstatus alwayslastline " %{= k} %{= W} %-Lw%{= Bw}%n%f %t%{-}%+Lw %=| %0c:%s "
-bindkey <, prev
-bindkey >. next
+bindkey ^[, prev # alt-,
+bindkey ^[. next # alt-.
 bindkey ^[w focus 
 vbell off
+
+bindkey "^[s" split
+bindkey "^[v" split -v
+bindkey "^[f" focus
+bindkey "^[q" only
 
 #pre-open dir
 #chdir /home/bshen/

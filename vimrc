@@ -31,7 +31,6 @@ call vundle#rc()
 "colorscheme molokai
 "highlight NonText guibg=#060606
 "highlight Folded  guibg=#0A0A0A guifg=#9090D0
-colorscheme default 
 
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -156,7 +155,7 @@ map <Esc><BS> :q <CR>
 map L <ESC>:tabnext<CR>
 map H <ESC>:tabprev<CR>
 map <C-i> <ESC>:!
-map <C-t>n <ESC>:Texplore <bar> CtrlP<CR>
+map <C-t>n <ESC>:Texplore <bar><CR>
 map <C-t>c <ESC>:tabclose<CR>
 map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 nmap + <C-W>+
@@ -173,3 +172,12 @@ nnoremap <2-LeftMouse> : cstag <C-R>=expand("<cword>")<CR><CR>
 highlight Comment ctermfg=Green
 highlight Search term=reverse ctermbg=4 ctermfg=7
 highlight Normal ctermbg=black ctermfg=white
+
+" set tags+=[tags];
+set tags+=/home/ryshen/workspace/fe2pg4/design/regs/outputs/include/tags
+
+colorscheme industry
+nmap F mx:call getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW')) <CR> %%b
+
+hi TabLine           cterm=underline ctermbg=black  ctermfg=white
+hi TabLineSel        cterm=bold      ctermbg=cyan  ctermfg=black
