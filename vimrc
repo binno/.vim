@@ -181,3 +181,9 @@ nmap F mx:call getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW')) <CR> %%b
 
 hi TabLine           cterm=underline ctermbg=black  ctermfg=white
 hi TabLineSel        cterm=bold      ctermbg=cyan  ctermfg=black
+
+highlight StatusLineNC    term=none cterm=bold   ctermfg=black   ctermbg=white
+highlight StatusLine      term=none cterm=bold   ctermfg=white    ctermbg=blue
+
+set fillchars=vert:\│
+hi clear VertSplit

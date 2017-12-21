@@ -5,6 +5,7 @@ bindkey ^[, prev # alt-,
 bindkey ^[. next # alt-.
 bindkey ^[w focus 
 vbell off
+defscrollback 10000
 
 bindkey "^[s" split
 bindkey "^[v" split -v
