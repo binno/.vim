@@ -41,30 +41,46 @@ let g:tagbar_width=35
 let g:tagbar_autofocus=1
 nmap tt <ESC> :TagbarToggle<CR>
 
-Plugin 'kien/ctrlp.vim'
-let g:ctrlp_map = '<c-p>'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-let g:ctrlp_user_command = 'find %s -type f' " MacOSX/Linux
+"Plugin 'kien/ctrlp.vim'
+"let g:ctrlp_map = '<c-p>'
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+"let g:ctrlp_custom_ignore = {
+"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"  \ 'file': '\v\.(exe|so|dll)$',
+"  \ 'link': 'some_bad_symbolic_links',
+"  \ }
+"let g:ctrlp_user_command = 'find %s -type f' " MacOSX/Linux
 
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'tpope/vim-fugitive'
-set laststatus=2 " Always display the status line
-set statusline+=%{fugitive#statusline()} "  Git Hotness
+"Plugin 'Lokaltog/vim-powerline'
+"Plugin 'tpope/vim-fugitive'
+"set laststatus=2 " Always display the status line
+"set statusline+=%{fugitive#statusline()} "  Git Hotness
 
-Plugin 'neovimhaskell/haskell-vim'
-let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
-let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
-let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
-let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
-let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
-"let g:haskell_classic_highlighting = 1
-"let g:cabal_indent_section = 2
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+""---------------alrLine Config--------------
+"if !exists('g:airline_symbols')
+"	let g:airline_symbols = {}
+"endif
+"let g:airline_symbols.space = "\ua0"
+"let g:airline_exclude_filename = []
+"let g:Powerline_symbols='fancy'
+"let g:airline_powerline_fonts=0
+"let Powerline_symbols='fancy'
+"let g:bufferline_echo=0
+"set laststatus=2
+"set t_Co=256
+"set fillchars+=stl:\ ,stlnc:\
+
+"Plugin 'neovimhaskell/haskell-vim'
+"let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+"let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+"let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+"let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+"let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+"let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+""let g:haskell_classic_highlighting = 1
+""let g:cabal_indent_section = 2
 
 "Plugin setting end
 
@@ -106,6 +122,7 @@ set linebreak
 set ruler
 "high light search 
 set hlsearch
+set incsearch
 "background-> light or dark
 set background=dark
 
@@ -128,14 +145,17 @@ set number
 set numberwidth=5
 
 set matchpairs+=<:>
-set hlsearch
 
 set tabpagemax=100
 
 set nocp
 
+" set tags+=[tags];
 set tags+=~/.vim/cpp_src/
 set tags+=tags;
+"set tags+=/home/ryshen/workspace/fe2pg4/design/regs/outputs/include/tags
+set tags+=/home/ryshen/workspace/ess_thunderbird_fe2-pg4/verification/soc/testbench/common/include_temp/tags
+
 
 set mouse=n
 set history=100
@@ -143,10 +163,8 @@ set history=100
 set vb t_vb=
 
 " Highlight current line
-"au WinLeave * set nocursorline nocursorcolumn
-"au WinEnter * set cursorline cursorcolumn
-"set cursorline cursorcolumn
-"set cursorline
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+set cursorline
 
 syntax on
 
@@ -169,21 +187,30 @@ nmap <C-w>w <ESC>:windo set wrap<CR>
 nnoremap <2-LeftMouse> : cstag <C-R>=expand("<cword>")<CR><CR>
 "nnoremap <C-F>2 :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
 
+colorscheme industry
+nmap F mx:call getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW')) <CR> %%b
+
 highlight Comment ctermfg=Green
 highlight Search term=reverse ctermbg=4 ctermfg=7
 highlight Normal ctermbg=black ctermfg=white
 
-" set tags+=[tags];
-set tags+=/home/ryshen/workspace/fe2pg4/design/regs/outputs/include/tags
+highlight TabLine         term=bold cterm=bold   ctermbg=darkgrey ctermfg=white                                                                           
+highlight TabLineSel      term=bold cterm=bold   ctermbg=blue     ctermfg=white                                                                           
+highlight TabLineFill     term=bold cterm=bold   ctermbg=black    ctermfg=darkgrey
 
-colorscheme industry
-nmap F mx:call getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW')) <CR> %%b
+highlight StatusLineNC    term=none cterm=none   ctermfg=darkgrey ctermbg=black                                                                           
+highlight StatusLine      term=none cterm=none   ctermfg=white    ctermbg=blue                                                                            
+set statusline=%4*%f\ %6*%m%4*\ %=%3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>                                                                                   
+highlight User1 ctermfg=red                                                                                                                               
+highlight User2 term=underline cterm=underline ctermfg=green                                                                                              
+highlight User3 term=underline cterm=underline ctermfg=yellow                                                                                             
+highlight User4 term=underline cterm=underline ctermfg=white                                                                                              
+highlight User5 ctermfg=cyan                                                                                                                              
+highlight User6 ctermfg=white    
 
-hi TabLine           cterm=underline ctermbg=black  ctermfg=white
-hi TabLineSel        cterm=bold      ctermbg=cyan  ctermfg=black
-
-highlight StatusLineNC    term=none cterm=bold   ctermfg=black   ctermbg=white
-highlight StatusLine      term=none cterm=bold   ctermfg=white    ctermbg=blue
-
+highlight LineNr ctermfg=darkgray ctermbg=black                                                                                                           
+highlight Comment ctermfg=darkcyan ctermbg=black                                                                                                          
+highlight PreCondit ctermfg=red ctermbg=black                                                                                                             
+                                                                                                                                                          
+highlight VertSplit cterm=none ctermfg=darkgray ctermbg=black                                                                                             
 set fillchars=vert:\│
-hi clear VertSplit
