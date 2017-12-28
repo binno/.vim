@@ -162,8 +162,11 @@ set history=100
 
 set vb t_vb=
 
+set t_Co=256
+
 " Highlight current line
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+"highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+highlight CursorLine cterm=NONE ctermbg=darkgrey ctermfg=none guibg=NONE guifg=NONE
 set cursorline
 
 syntax on
@@ -187,7 +190,6 @@ nmap <C-w>w <ESC>:windo set wrap<CR>
 nnoremap <2-LeftMouse> : cstag <C-R>=expand("<cword>")<CR><CR>
 "nnoremap <C-F>2 :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
 
-colorscheme industry
 nmap F mx:call getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW')) <CR> %%b
 
 highlight Comment ctermfg=Green
