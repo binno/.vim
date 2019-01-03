@@ -32,9 +32,9 @@ call vundle#rc()
 "highlight NonText guibg=#060606
 "highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
-"Plugin 'Valloric/YouCompleteMe'
-"let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-"let g:ycm_confirm_extra_conf = 0
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 
 Plugin 'majutsushi/tagbar'
 let g:tagbar_width=30
@@ -72,15 +72,15 @@ nmap <F2> :TagbarToggle<CR>
 "set t_Co=256
 "set fillchars+=stl:\ ,stlnc:\
 
-"Plugin 'neovimhaskell/haskell-vim'
-"let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
-"let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
-"let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
-"let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
-"let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-"let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
-""let g:haskell_classic_highlighting = 1
-""let g:cabal_indent_section = 2
+Plugin 'neovimhaskell/haskell-vim'
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+"let g:haskell_classic_highlighting = 1
+"let g:cabal_indent_section = 2
 
 Plugin 'tpope/vim-obsession'
 
