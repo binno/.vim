@@ -24,6 +24,17 @@ nmap <F2> :TagbarToggle<CR>
 
 Plugin 'tpope/vim-obsession'
 
+Plugin 'davidhalter/jedi-vim'
+autocmd FileType python setlocal completeopt-=preview
+"let g:jedi#goto_command = "<leader>d"
+"let g:jedi#goto_assignments_command = "<leader>g"
+"let g:jedi#goto_definitions_command = ""
+"let g:jedi#documentation_command = "K"
+"let g:jedi#usages_command = "<leader>n"
+"let g:jedi#completions_command = "<C-Space>"
+"let g:jedi#rename_command = "<leader>r"
+let g:jedi#completions_command = "<C-l>"
+
 "Plugin setting end
 
 filetype plugin indent on " required
@@ -146,7 +157,7 @@ vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
 
 set background=dark
-colorscheme elflord
+colorscheme slate
 
 highlight Search term=reverse ctermbg=4 ctermfg=7                                                                                                                       
 highlight Normal ctermbg=black ctermfg=white
