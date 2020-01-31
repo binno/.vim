@@ -33,11 +33,12 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-export LANGUAGE=zh_TW.UTF-8
-export LANG=zh_TW.UTF-8
-export LC_ALL=zh_TW.UTF-8
-export LC_CTYPE=zh_TW.UTF-8
-export LC_MESSAGES=en_US.UTF-8
+export LANG=C
+#export LANGUAGE=zh_TW.UTF-8
+#export LANG=zh_TW.UTF-8
+export LC_ALL=en_US.UTF-8
+#export LC_CTYPE=zh_TW.UTF-8
+#export LC_MESSAGES=zh_TW.UTF-8
 
 export X11=/usr/share/X11
 export PATH=/bin:/usr/bin:$X11/bin

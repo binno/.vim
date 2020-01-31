@@ -11,7 +11,7 @@ alias vimdiff='vimdiff -X'
 alias make="nice make"
 alias mk='nice make'
 alias grep='grep --color -I -n -i'
-alias rgrep='rgrep --color -I -n -i'
+alias rgrep='rgrep --color -I -n -i --exclude="tags"'
 alias indent='indent -kr -i8 -ts8 -sob -l80 -bs -psl'
 alias df='df -h'
 alias cp='cp -rf'
