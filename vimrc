@@ -1,41 +1,41 @@
-" Vundle setting
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-  echo "Installing Vundle.."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-  let iCanHazVundle=0
-endif
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-"Plugin setting
-
-Plugin 'majutsushi/tagbar'
-let g:tagbar_width=30
-let g:tagbar_autofocus=1
-nmap <F2> :TagbarToggle<CR>
-
-Plugin 'tpope/vim-obsession'
-
-Plugin 'davidhalter/jedi-vim'
-autocmd FileType python setlocal completeopt-=preview
-"let g:jedi#goto_command = "<leader>d"
-"let g:jedi#goto_assignments_command = "<leader>g"
-"let g:jedi#goto_definitions_command = ""
-"let g:jedi#documentation_command = "K"
-"let g:jedi#usages_command = "<leader>n"
-"let g:jedi#completions_command = "<C-Space>"
-"let g:jedi#rename_command = "<leader>r"
-let g:jedi#completions_command = "<C-l>"
-
-"Plugin setting end
+"" Vundle setting
+"let iCanHazVundle=1
+"let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+"if !filereadable(vundle_readme)
+"  echo "Installing Vundle.."
+"  echo ""
+"  silent !mkdir -p ~/.vim/bundle
+"  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+"  let iCanHazVundle=0
+"endif
+"set nocompatible              " be iMproved, required
+"filetype off                  " required
+"
+"" set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
+"
+""Plugin setting
+"
+"Plugin 'majutsushi/tagbar'
+"let g:tagbar_width=30
+"let g:tagbar_autofocus=1
+"nmap <F2> :TagbarToggle<CR>
+"
+"Plugin 'tpope/vim-obsession'
+"
+"Plugin 'davidhalter/jedi-vim'
+"autocmd FileType python setlocal completeopt-=preview
+""let g:jedi#goto_command = "<leader>d"
+""let g:jedi#goto_assignments_command = "<leader>g"
+""let g:jedi#goto_definitions_command = ""
+""let g:jedi#documentation_command = "K"
+""let g:jedi#usages_command = "<leader>n"
+""let g:jedi#completions_command = "<C-Space>"
+""let g:jedi#rename_command = "<leader>r"
+"let g:jedi#completions_command = "<C-l>"
+"
+""Plugin setting end
 
 filetype plugin indent on " required
 
@@ -105,10 +105,8 @@ set matchpairs+=<:>
 set nocp
 
 " set tags+=[tags];
-set tags+=~/.vim/cpp_src/
+"set tags+=~/.vim/cpp_src/
 set tags+=tags;
-"set tags+=/home/ryshen/workspace/fe2pg4/design/regs/outputs/include/tags
-set tags+=/home/ryshen/workspace/ess_thunderbird_fe2-pg4/verification/soc/testbench/common/include_temp/tags
 
 
 set mouse=n
