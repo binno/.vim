@@ -1,41 +1,54 @@
-"" Vundle setting
-"let iCanHazVundle=1
-"let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-"if !filereadable(vundle_readme)
-"  echo "Installing Vundle.."
-"  echo ""
-"  silent !mkdir -p ~/.vim/bundle
-"  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-"  let iCanHazVundle=0
-"endif
-"set nocompatible              " be iMproved, required
-"filetype off                  " required
-"
-"" set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-"
-""Plugin setting
-"
-"Plugin 'majutsushi/tagbar'
-"let g:tagbar_width=30
-"let g:tagbar_autofocus=1
-"nmap <F2> :TagbarToggle<CR>
-"
-"Plugin 'tpope/vim-obsession'
-"
-"Plugin 'davidhalter/jedi-vim'
-"autocmd FileType python setlocal completeopt-=preview
-""let g:jedi#goto_command = "<leader>d"
-""let g:jedi#goto_assignments_command = "<leader>g"
-""let g:jedi#goto_definitions_command = ""
-""let g:jedi#documentation_command = "K"
-""let g:jedi#usages_command = "<leader>n"
-""let g:jedi#completions_command = "<C-Space>"
-""let g:jedi#rename_command = "<leader>r"
-"let g:jedi#completions_command = "<C-l>"
-"
-""Plugin setting end
+" Vundle setting
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+  let iCanHazVundle=0
+endif
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" ========== Plugin Setting ==========
+
+Plugin 'majutsushi/tagbar'
+let g:tagbar_ctags_bin='ctags'
+let g:tagbar_width=20
+let g:tagbar_left = 1
+set updatetime=100
+nmap <F8> :TagbarToggle<CR>
+au  VimEnter * Tagbar
+
+Plugin 'wesleyche/SrcExpl'
+" map shortcut to "F2"
+nmap <F2> :SrcExplToggle<CR>
+" set the height of window
+let g:SrcExpl_winHeight = 10
+" Set 100 ms for refreshing the Source Explorer
+let g:SrcExpl_refreshTime = 100
+" Set "Enter" key to jump into the exact definition context
+let g:SrcExpl_jumpKey = "<ENTER>"
+" Set "Space" key for back from the definition context
+let g:SrcExpl_gobackKey = "<SPACE>"
+" // Enable/Disable the local definition searching, and note that this is not
+" // guaranteed to work, the Source Explorer doesn't check the syntax for now.
+" // It only searches for a match with the keyword according to command 'gd'
+let g:SrcExpl_searchLocalDef = 0
+" // Do not let the Source Explorer update the tags file when opening
+let g:SrcExpl_isUpdateTags = 0
+" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
+" // create/update the tags file
+let g:SrcExpl_updateTagsCmd = "ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q ."
+" // Set "<F3>" key for updating the tags file artificially
+let g:SrcExpl_updateTagsKey = "<F3>"
+
+" ========== Plugin Setting End ==========
 
 filetype plugin indent on " required
 
@@ -123,14 +136,43 @@ set cursorline
 
 syntax on
 
+" ========== CSCOPE Setting ==========
+set cscopetag
+set csto=0
+
+if filereadable("cscope.out")
+   cs add cscope.out
+elseif $CSCOPE_DB != ""
+    cs add $CSCOPE_DB
+endif
+set cscopeverbose
+
+" find symbol
+nmap zs :cs find s <C-R>=expand("<cword>")<CR><CR>
+" find defination
+nmap zg :cs find g <C-R>=expand("<cword>")<CR><CR>
+" find usage
+nmap zc :cs find c <C-R>=expand("<cword>")<CR><CR>
+" find string
+nmap zt :cs find t <C-R>=expand("<cword>")<CR><CR>
+" find with grep, similar to egrep
+nmap ze :cs find e <C-R>=expand("<cword>")<CR><CR>
+" find file
+nmap zf :cs find f <C-R>=expand("<cfile>")<CR><CR>
+" find files include current file
+nmap zi :cs find i <C-R>=expand("<cfile>")<CR>$<CR>
+" find function
+nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+" ========== VIM MAP Setting ==========
 map <Esc><Esc> :w!<CR>
 map <Esc><BS> :q <CR>
 map L <ESC>:tabnext<CR>
 map H <ESC>:tabprev<CR>
 map <C-i> <ESC>:!
-map <C-t>n <ESC>:Texplore <bar><CR>
+map <C-t>n <ESC>:Texplore <bar><CR> <F8>
 map <C-t>c <ESC>:tabclose<CR>
-map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
+"map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 nmap + <C-W>+
 nmap - <C-W>-
 nmap <C-l>  <C-w>>
@@ -140,12 +182,9 @@ nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
 nmap mks <ESC>:mksession!<CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
-nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
-"nnoremap <2-LeftMouse> <C-w>} <C-w>w <C-w>T
-"nnoremap <2-LeftMouse> <C-w>} <C-w>k <C-w>T
-nnoremap <F5> <C-w>T
+"nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
+"nnoremap <F5> <C-w>T
 nnoremap <Space><Space> :q<CR>
-"nnoremap <C-F>2 :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
 nmap ff :vimgrep /<c-r>=expand("<cword>")<cr>/ %<cr> !:copen <Enter>
 nmap F mx:call getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW')) <CR> %%b
 
@@ -153,6 +192,8 @@ let mapleader=","
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
+
+" ========== Main Viewer Setting ==========
 
 set background=dark
 colorscheme slate
@@ -181,3 +222,4 @@ highlight PreCondit ctermfg=red ctermbg=black
 
 highlight VertSplit cterm=none ctermfg=darkgray ctermbg=black                                                                                             
 set fillchars=vert:\|
+

@@ -29,6 +29,7 @@ alias ipython="ipython --colors=\"Linux\""
 alias w3mgoogle='w3m -num http://www.google.com.tw'
 alias cmake='/usr/local/bin/cmake'
 alias python='python -t'
+alias cscope='cscope -Rbqk'
 
 #ruby setting
 alias gems='gem search -r'
