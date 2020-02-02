@@ -29,7 +29,7 @@ Plugin 'wesleyche/SrcExpl'
 " map shortcut to "F2"
 nmap <F2> :SrcExplToggle<CR>
 " set the height of window
-let g:SrcExpl_winHeight = 10
+let g:SrcExpl_winHeight = 8
 " Set 100 ms for refreshing the Source Explorer
 let g:SrcExpl_refreshTime = 100
 " Set "Enter" key to jump into the exact definition context
@@ -184,7 +184,7 @@ nmap mks <ESC>:mksession!<CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
 "nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
 "nnoremap <F5> <C-w>T
-nnoremap <Space><Space> :q<CR>
+"nnoremap <Space><Space> :q<CR>
 nmap ff :vimgrep /<c-r>=expand("<cword>")<cr>/ %<cr> !:copen <Enter>
 nmap F mx:call getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW')) <CR> %%b
 
