@@ -134,6 +134,8 @@ set t_Co=256
 highlight CursorLine cterm=NONE ctermbg=darkgrey ctermfg=none guibg=NONE guifg=NONE
 set cursorline
 
+set clipboard=unnamed
+
 syntax on
 
 " ========== CSCOPE Setting ==========
@@ -172,7 +174,7 @@ map H <ESC>:tabprev<CR>
 map <C-i> <ESC>:!
 map <C-t>n <ESC>:Texplore <bar><CR> <F8>
 map <C-t>c <ESC>:tabclose<CR>
-"map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
+map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q --exclude="*.mem" .<CR>
 nmap + <C-W>+
 nmap - <C-W>-
 nmap <C-l>  <C-w>>
@@ -198,7 +200,7 @@ vnoremap <leader>p "_dP
 set background=dark
 colorscheme slate
 
-highlight Search term=reverse ctermbg=4 ctermfg=7                                                                                                                       
+highlight Search term=reverse ctermbg=4 ctermfg=7
 highlight Normal ctermbg=black ctermfg=white
 
 highlight TabLine         term=bold cterm=bold   ctermbg=darkgrey ctermfg=white                                                                           
