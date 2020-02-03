@@ -38,3 +38,4 @@ alias tmux='tmux -2'
 alias tmuxls='tmux ls'
 alias tmuxat='tmux attach-session -t'
 
+# find -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.h' -o -name '*.py' -o -name '*.S'

@@ -44,7 +44,8 @@ let g:SrcExpl_searchLocalDef = 0
 let g:SrcExpl_isUpdateTags = 0
 " // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
 " // create/update the tags file
-let g:SrcExpl_updateTagsCmd = "ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q ."
+"let g:SrcExpl_updateTagsCmd = "ctags -R --sort=foldcase --c++-kinds=+pl --fields=+iaS --extra=+q ."
+let g:SrcExpl_updateTagsCmd = "ctags -L cs.files"
 " // Set "<F3>" key for updating the tags file artificially
 let g:SrcExpl_updateTagsKey = "<F3>"
 
@@ -145,7 +146,7 @@ set csto=0
 if filereadable("cscope.out")
    cs add cscope.out
 elseif $CSCOPE_DB != ""
-    cs add $CSCOPE_DB
+   cs add $CSCOPE_DB
 endif
 set cscopeverbose
 
@@ -198,7 +199,7 @@ vnoremap <leader>p "_dP
 " ========== Main Viewer Setting ==========
 
 set background=dark
-colorscheme slate
+colorscheme elflord
 
 highlight Search term=reverse ctermbg=4 ctermfg=7
 highlight Normal ctermbg=black ctermfg=white
