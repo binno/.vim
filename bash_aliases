@@ -17,7 +17,7 @@ alias df='df -h'
 alias cp='cp -rf'
 alias jb='jobs'
 alias apt-get='sudo apt-get'
-alias cscope='find ./ -name "*.c" -or -name "*.h" -or -name "*.cpp" -or -name "*.S" -or -name "*.s" | cscope -Rbq'
+alias cscope='cscope -Rbqk'
 alias scp='scp -r'
 alias cflow='cflow -T'
 alias whereis="type"
@@ -29,7 +29,6 @@ alias ipython="ipython --colors=\"Linux\""
 alias w3mgoogle='w3m -num http://www.google.com.tw'
 alias cmake='/usr/local/bin/cmake'
 alias python='python -t'
-alias cscope='cscope -Rbqk'
 
 #ruby setting
 alias gems='gem search -r'
