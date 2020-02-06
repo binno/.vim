@@ -20,7 +20,7 @@ call vundle#rc()
 Plugin 'majutsushi/tagbar'
 let g:tagbar_ctags_bin='ctags'
 let g:tagbar_width=20
-let g:tagbar_left = 1
+"let g:tagbar_left = 1
 set updatetime=100
 nmap <F8> :TagbarToggle<CR>
 au  VimEnter * Tagbar
