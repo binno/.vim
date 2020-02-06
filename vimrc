@@ -21,9 +21,8 @@ Plugin 'majutsushi/tagbar'
 let g:tagbar_ctags_bin='ctags'
 let g:tagbar_width=20
 "let g:tagbar_left = 1
-set updatetime=100
+set updatetime=500
 nmap <F8> :TagbarToggle<CR>
-au  VimEnter * Tagbar
 
 Plugin 'wesleyche/SrcExpl'
 " map shortcut to "F2"
@@ -31,7 +30,7 @@ nmap <F2> :SrcExplToggle<CR>
 " set the height of window
 let g:SrcExpl_winHeight = 8
 " Set 100 ms for refreshing the Source Explorer
-let g:SrcExpl_refreshTime = 100
+let g:SrcExpl_refreshTime = 300
 " Set "Enter" key to jump into the exact definition context
 let g:SrcExpl_jumpKey = "<ENTER>"
 " Set "Space" key for back from the definition context
@@ -40,6 +39,9 @@ let g:SrcExpl_gobackKey = "<SPACE>"
 " // guaranteed to work, the Source Explorer doesn't check the syntax for now.
 " // It only searches for a match with the keyword according to command 'gd'
 let g:SrcExpl_searchLocalDef = 0
+" // Workaround for Vim bug @https://goo.gl/TLPK4K as any plugins using autocmd for
+" // BufReadPre might have conflicts with Source Explorer. e.g. YCM, Syntastic etc.
+let g:SrcExpl_nestedAutoCmd = 1
 " // Do not let the Source Explorer update the tags file when opening
 let g:SrcExpl_isUpdateTags = 0
 " // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
@@ -185,7 +187,7 @@ nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
 nmap mks <ESC>:mksession!<CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
-"nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
+nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
 "nnoremap <F5> <C-w>T
 "nnoremap <Space><Space> :q<CR>
 nmap ff :vimgrep /<c-r>=expand("<cword>")<cr>/ %<cr> !:copen <Enter>
@@ -195,6 +197,7 @@ let mapleader=","
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
+nnoremap <leader>r :source $MYVIMRC<CR>
 
 " ========== Main Viewer Setting ==========
 
