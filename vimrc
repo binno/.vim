@@ -175,7 +175,7 @@ map <Esc><BS> :q <CR>
 map L <ESC>:tabnext<CR>
 map H <ESC>:tabprev<CR>
 map <C-i> <ESC>:!
-map <C-t>n <ESC>:Texplore <bar><CR> <F8>
+map <C-t>n <ESC>:Texplore <bar><CR>
 map <C-t>c <ESC>:tabclose<CR>
 map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q --exclude="*.mem" .<CR>
 nmap + <C-W>+
