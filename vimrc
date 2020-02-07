@@ -186,6 +186,7 @@ nmap dir  <ESC>:Explore<CR>
 nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
 nmap mks <ESC>:mksession!<CR>
+nnoremap cc <ESC>:q<CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
 nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
 "nnoremap <F5> <C-w>T
