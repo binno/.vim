@@ -51,6 +51,8 @@ let g:SrcExpl_updateTagsCmd = "ctags -L cs.files"
 " // Set "<F3>" key for updating the tags file artificially
 let g:SrcExpl_updateTagsKey = "<F3>"
 
+Plugin 'lukelbd/vim-tabline'
+
 " ========== Plugin Setting End ==========
 
 filetype plugin indent on " required
@@ -187,12 +189,12 @@ nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
 nmap mks <ESC>:mksession!<CR>
 nnoremap cc <ESC>:q<CR>
+nnoremap tt <ESC>:vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
 nmap <C-w>w <ESC>:windo set wrap<CR>
-nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
+"nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
 "nnoremap <F5> <C-w>T
 "nnoremap <Space><Space> :q<CR>
 nmap ff :vimgrep /<c-r>=expand("<cword>")<cr>/ %<cr> !:copen <Enter>
-nmap F mx:call getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW')) <CR> %%b
 
 let mapleader=","
 nnoremap <leader>d "_d
@@ -207,10 +209,6 @@ colorscheme elflord
 
 highlight Search term=reverse ctermbg=4 ctermfg=7
 highlight Normal ctermbg=black ctermfg=white
-
-highlight TabLine         term=bold cterm=bold   ctermbg=darkgrey ctermfg=white                                                                           
-highlight TabLineSel      term=bold cterm=bold   ctermbg=blue     ctermfg=white                                                                           
-highlight TabLineFill     term=bold cterm=bold   ctermbg=black    ctermfg=darkgrey
 
 highlight StatusLineNC    term=none cterm=none   ctermfg=darkgrey ctermbg=black                                                                           
 highlight StatusLine      term=none cterm=none   ctermfg=white    ctermbg=blue                                                                            
