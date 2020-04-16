@@ -3,7 +3,6 @@
 set -o noclobber
 set -o ignoreeof
 set -o notify
-eval "`dircolors -b`"
 umask 022
 
 unset LANG
@@ -80,3 +79,5 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
+
+source ~/.git-prompt.sh
