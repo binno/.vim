@@ -12,7 +12,7 @@ alias make="nice make"
 alias mk='nice make'
 alias grep='grep --color -I -n -i'
 alias rgrep='rgrep --color -I -n -i --exclude="tags"'
-alias indent='indent -kr -i8 -ts8 -sob -l80 -bs -psl'
+alias indent='indent -gnu -bli0 -i4 -cli4 -nut -nip -npsl -nhnl'
 alias df='df -h'
 alias cp='cp -rf'
 alias jb='jobs'
