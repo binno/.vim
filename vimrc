@@ -72,8 +72,14 @@ Plugin 'lifepillar/vim-solarized8.git'
 set background=dark
 colorscheme solarized8_high
 
-Plugin 'Lokaltog/vim-powerline'
-let g:Powerline_colorscheme='solarized256'
+Plugin 'vim-airline/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#left_sep = ' '         " set left separator
+let g:airline#extensions#tabline#left_alt_sep = '|'     " set left separator which are not editting
+let g:airline#extensions#tabline#show_buffers = 0
 
 Plugin 'majutsushi/tagbar'
 let g:tagbar_ctags_bin='ctags'
@@ -115,6 +121,12 @@ let g:jedi#completions_command = '<C-N>'
 let g:jedi#goto_command = '<leader>jg'
 let g:jedi#documentation_command = '<leader>jd'
 let g:jedi#usages_command = '<leader>ju'
+
+Plugin 'airblade/vim-gitgutter'
+let g:gitgutter_sign_added = 'A'
+let g:gitgutter_sign_modified = 'M'
+let g:gitgutter_sign_removed = 'D'
+set updatetime=250
 " ========== Plugin Setting End ==========
 
 filetype plugin indent on " required
