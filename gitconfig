@@ -76,6 +76,10 @@
 	mg= merge
 	d = difftool
 
+    bname = !"git rev-parse --abbrev-ref HEAD"
+    in  = !"git log $(git bname)..origin/HEAD"
+    out = !"git log origin/HEAD..$(git bname)"
+
 #delete dangling list completely
 #git reflog expire --expire-unreachable=0 --all
 #git gc --prune=0
