@@ -112,8 +112,9 @@
     cmd = meld "$LOCAL" "$REMOTE"
 
 [merge]
-    tool = kdiff3
-    conflictstyle = diff3 # Three file comparision (Base = Common Ancestor, Local = Current Branch, Remote = Merge in Branch)
+#   tool = kdiff3
+#   conflictstyle = diff3 # Three file comparision (Base = Common Ancestor, Local = Current Branch, Remote = Merge in Branch)
+    tool = vimdiff
 
 [mergetool]
     prompt = false
