@@ -108,6 +108,13 @@ let g:SrcExpl_isUpdateTags = 0
 let g:SrcExpl_updateTagsCmd = "ctags -L cs.files"
 " // Set "<F3>" key for updating the tags file artificially
 let g:SrcExpl_updateTagsKey = "<F3>"
+
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#force_py_version = 3
+let g:jedi#completions_command = '<C-N>'
+let g:jedi#goto_command = '<leader>jg'
+let g:jedi#documentation_command = '<leader>jd'
+let g:jedi#usages_command = '<leader>ju'
 " ========== Plugin Setting End ==========
 
 filetype plugin indent on " required
