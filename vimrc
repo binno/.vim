@@ -194,3 +194,4 @@ func! CompileRunGcc()
         exec "!time python3 %"
     endif
 endfunc
+nnoremap <leader>vd :!git d %<CR>
