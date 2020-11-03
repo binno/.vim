@@ -74,8 +74,9 @@ colorscheme solarized8_high
 
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
+      \ 'colorscheme': 'deus',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'modified', 'absolutepath' ] ],
       \ }
       \ }
 
