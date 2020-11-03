@@ -2,7 +2,7 @@
     default = current
 [user]
 	name = binno
-	email = binno@wdc.com
+	email = climaxking@gmail.com
 
 [color]
     diff = auto
@@ -32,11 +32,12 @@
     br = branch
     bra = branch -a
     brd = branch -D
+    brm = branch -m
 
     re = remote
 
     l = log --graph --all --decorate --oneline -n 10
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    #lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lg1 = !"git lg1-specific --all"
     lg2 = !"git lg2-specific --all"
     lg3 = !"git lg3-specific --all"
@@ -44,18 +45,11 @@
     lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
 
-    l = log --graph --all --decorate --oneline -n 10
-    lg1 = !"git lg1-specific --all"
-    lg2 = !"git lg2-specific --all"
-    lg3 = !"git lg3-specific --all"
-    lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-    lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-    lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
- 
     lg = log --pretty="%C(yellow)%h|%C(red)%ad|%C(green)%an:%C(reset)%s" --date=short --abbrev-commit -10
     lga = log --pretty="%C(yellow)%h|%C(red)%ad|%C(green)%an:%C(reset)%s" --date=short --abbrev-commit
     lgp = log -p 
 	lgs = log --stat -1
+    lgu = lg --author
 
     bl = blame
     so = show
@@ -79,6 +73,8 @@
     bname = !"git rev-parse --abbrev-ref HEAD"
     in  = !"git log $(git bname)..origin/HEAD"
     out = !"git log origin/HEAD..$(git bname)"
+
+    rp = remote prune origin
 
 #delete dangling list completely
 #git reflog expire --expire-unreachable=0 --all
