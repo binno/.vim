@@ -73,6 +73,11 @@ set background=dark
 colorscheme solarized8_high
 
 Plugin 'itchyny/lightline.vim'
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \ }
+      \ }
 
 Plugin 'majutsushi/tagbar'
 let g:tagbar_ctags_bin='ctags'
