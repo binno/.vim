@@ -11,7 +11,7 @@ alias vimdiff='vimdiff -X'
 alias make="nice make"
 alias mk='nice make'
 alias grep='grep --color -I -n -i'
-alias rgrep='rgrep --color -I -n -i --exclude="tags"'
+alias rgrep='grep -R --exclude="tags"'
 alias indent='indent -gnu -bli0 -i4 -cli4 -nut -nip -npsl -nhnl'
 alias df='df -h'
 alias cp='cp -rf'
@@ -29,6 +29,7 @@ alias ipython="ipython --colors=\"Linux\""
 alias w3mgoogle='w3m -num http://www.google.com.tw'
 alias cmake='/usr/local/bin/cmake'
 alias python='python -t'
+alias rp='realpath'
 
 #ruby setting
 alias gems='gem search -r'
@@ -38,4 +39,5 @@ alias tmux='tmux -2'
 alias tmuxls='tmux ls'
 alias tmuxat='tmux attach-session -t'
 
-# find -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.h' -o -name '*.py' -o -name '*.S'
+# find -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.h' -o -name '*.py' -o -name '*.S' -o -name '*.cc'
+# -type d -name node_modules -prune

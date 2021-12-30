@@ -1,8 +1,8 @@
 [push]
     default = current
 [user]
-	name = binno
-	email = climaxking@gmail.com
+    name = binno
+    email = climaxking@gmail.com
 
 [color]
     diff = auto

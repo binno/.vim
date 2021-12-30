@@ -110,7 +110,7 @@ let g:SrcExpl_isUpdateTags = 0
 " // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
 " // create/update the tags file
 "let g:SrcExpl_updateTagsCmd = "ctags -R --sort=foldcase --c++-kinds=+pl --fields=+iaS --extra=+q ."
-let g:SrcExpl_updateTagsCmd = "ctags -L cs.files"
+let g:SrcExpl_updateTagsCmd = "ctags -L $HOME/cs.files"
 " // Set "<F3>" key for updating the tags file artificially
 let g:SrcExpl_updateTagsKey = "<F3>"
 
@@ -174,6 +174,8 @@ nmap dir  <ESC>:Explore<CR>
 nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
 nmap mks <ESC>:mksession!<CR>
+nmap oct <ESC>:echo 0x
+nmap hex <ESC>:echo printf('%x',
 nnoremap tt <ESC>:vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
 nmap <C-w>w <ESC>:windo set wrap<CR>
 "nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T

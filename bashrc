@@ -7,6 +7,10 @@ umask 022
 
 unset LANG
 
+if [ -f ~/.git-prompt.sh ]; then
+  source ~/.git-prompt.sh
+fi
+
 # set a fancy prompt
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -39,32 +43,32 @@ export LC_ALL=en_US.UTF-8
 #export LC_CTYPE=zh_TW.UTF-8
 #export LC_MESSAGES=zh_TW.UTF-8
 
-export X11=/usr/share/X11
-export PATH=/bin:/usr/bin:$X11/bin
-export MANPATH=/usr/share/man:$X11/man
+#export X11=/usr/share/X11
+#export PATH=/bin:/usr/bin:$X11/bin
+#export MANPATH=/usr/share/man:$X11/man
 
-export PATH=/home/bshen/:/home/bshen/bin/elf_toolchain:/home/bshen/bin/linux_toolchain:/home/bshen/bin/qemu_bin:"$PATH"
+#export PATH=/home/bshen/:/home/bshen/bin/elf_toolchain:/home/bshen/bin/linux_toolchain:/home/bshen/bin/qemu_bin:"$PATH"
 
-#risc-v tool-chain path
-export RISCV=/home/bshen/RISC-V/toolchain
-export PATH=$RISCV/bin:"$PATH"
+##risc-v tool-chain path
+#export RISCV=/home/bshen/RISC-V/toolchain
+#export PATH=$RISCV/bin:"$PATH"
 
-export SYSTEMC=/home/binno/bin/systemc_2_2_0/lib-linux
+#export SYSTEMC=/home/binno/bin/systemc_2_2_0/lib-linux
 
-#ld prepare path
-export LD_LIBRARY_PATH=/home/bshen/bin/gtest_lib:/home/bshen/boost/build/lib:$LD_LIBRARY_PATH
-
-#boost build path
-export BOOST_BUILD_PATH=/home/bshen/boost/boost-build
-
-#RVDS license file location
-export ARMLMD_LICENSE_FILE=/usr/local/flexlm/licenses/license.dat
+##ld prepare path
+#export LD_LIBRARY_PATH=/home/bshen/bin/gtest_lib:/home/bshen/boost/build/lib:$LD_LIBRARY_PATH
+#
+##boost build path
+#export BOOST_BUILD_PATH=/home/bshen/boost/boost-build
+#
+##RVDS license file location
+#export ARMLMD_LICENSE_FILE=/usr/local/flexlm/licenses/license.dat
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 
-export LM_LICENSE_FILE=1717@lscic3
-export MODELSIM_HOME=/usr/cad/mentor/modelsim/cur
+#export LM_LICENSE_FILE=1717@lscic3
+#export MODELSIM_HOME=/usr/cad/mentor/modelsim/cur
 
 bind '"\C-p":history-search-backward'
 bind '"\C-n":history-search-forward'
