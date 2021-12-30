@@ -124,3 +124,6 @@
 
 [tig "bind"]
     generic = D !git difftool --tool=vimdiff --no-prompt %(commit)^ %(commit)
+
+# Resolve push problem
+# git remote set-url origin git@github.com:{user_id}/{project_name}.git
