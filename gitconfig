@@ -8,14 +8,14 @@
     diff = auto
     status = auto
     branch = auto
-    
+
 [core]
     editor = vim
     pager = less -FXRS
 
 [alias]
-	addi = add -i
-	rmc = rm --cached
+    addi = add -i
+    rmc = rm --cached
 
     co = checkout
     cos = checkout --track git-svn -b
@@ -27,7 +27,7 @@
 
     di = diff
     st = status
-	stm = status -uno
+    stm = status -uno
 
     br = branch
     bra = branch -a
@@ -47,8 +47,8 @@
 
     lg = log --pretty="%C(yellow)%h|%C(red)%ad|%C(green)%an:%C(reset)%s" --date=short --abbrev-commit -10
     lga = log --pretty="%C(yellow)%h|%C(red)%ad|%C(green)%an:%C(reset)%s" --date=short --abbrev-commit
-    lgp = log -p 
-	lgs = log --stat -1
+    lgp = log -p
+    lgs = log --stat -1
     lgu = lg --author
 
     bl = blame
@@ -57,7 +57,7 @@
 
     rsh = reset --hard
     rss = reset --soft
-	rs = reset HEAD
+    rs = reset HEAD
 
     #git arc --prefix=[dir name] HEAD |gzip > [name].tar.gz
     arc = archive --format=tar
@@ -67,8 +67,8 @@
     ap= apply --reject
     gp= grep -n
     cp= cherry-pick
-	mg= merge
-	d = difftool
+    mg= merge
+    d = difftool
 
     bname = !"git rev-parse --abbrev-ref HEAD"
     in  = !"git log $(git bname)..origin/HEAD"

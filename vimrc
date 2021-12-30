@@ -196,3 +196,7 @@ func! CompileRunGcc()
 endfunc
 nnoremap <leader>jr :call CompileRunGcc()<CR>
 nnoremap <leader>vd :!git d %<CR>
+" ========== VIM Self Color Setting ==========
+highlight MyTabSpace guifg=Green ctermfg=Green
+match MyTabSpace /\t\| /
+set listchars=tab:>~,trail:@
