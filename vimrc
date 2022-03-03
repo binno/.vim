@@ -163,6 +163,8 @@ nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
 map <Esc><Esc> :w!<CR>
 map L <ESC>:tabnext<CR>
 map H <ESC>:tabprev<CR>
+map ( <ESC>:-tabmove<CR>
+map ) <ESC>:+tabmove<CR>
 map <C-t>n <ESC>:Texplore <bar><CR>
 nnoremap cc <ESC>:q<CR>
 map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q --exclude="*.mem" .<CR>

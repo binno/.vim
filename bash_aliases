@@ -27,7 +27,6 @@ alias astyle="astyle -S --style=allman"
 alias ipython="ipython --colors=\"Linux\""
 #w3m setting
 alias w3mgoogle='w3m -num http://www.google.com.tw'
-alias cmake='/usr/local/bin/cmake'
 alias python='python -t'
 alias rp='realpath'
 
