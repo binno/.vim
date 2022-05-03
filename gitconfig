@@ -58,6 +58,7 @@
     rsh = reset --hard
     rss = reset --soft
     rs = reset HEAD
+    rt = restore
 
     #git arc --prefix=[dir name] HEAD |gzip > [name].tar.gz
     arc = archive --format=tar
