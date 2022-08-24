@@ -1,6 +1,12 @@
+truecolor on
 termcapinfo xterm ti@:te@
-#caption always "%{= k} %{= Y} [%n]%t @ %H %{-} %= %{= R} %l %{-} | %{= G} %Y-%m-%d %{-} "
-hardstatus alwayslastline " %{= k} %{= W} %-Lw%{= Bw}%n%f %t%{-}%+Lw %=| %0c:%s "
+
+hardstatus off
+backtick 0 5 5 "/bin/date" '+%Y-%m-%d'
+backtick 1 5 5 "/bin/date" '+%H:%M'
+#caption always "%{#ffffff;#0000CD} [%S]  %f %t %? ( %{rY} %u %{#ffffff;#ff0000} ) %?"
+hardstatus alwayslastline '%{#ffffff}%= %{7}%?%-Lw%?%{1;0}%{#81D8D0}%n%f%t%?(%u)%?%{1;0}%{7}%?%+Lw%?%? %=%{#00a5ff}%{#FFD700;#008B8B}%0` %{#ffffff}%{#0000CD;#008B8B}%1`'
+
 bindkey ^[, prev # alt-,
 bindkey ^[. next # alt-.
 bindkey ^[w focus 
@@ -12,9 +18,3 @@ bindkey "^[s" split
 bindkey "^[v" split -v
 bindkey "^[f" focus
 bindkey "^[q" only
-
-#pre-open dir
-#chdir /home/bshen/
-#screen -fn -t bash 0
-#
-#chdir ~

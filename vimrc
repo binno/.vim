@@ -45,10 +45,12 @@ set tabpagemax=100          " set tab page expression
 set numberwidth=5
 set matchpairs+=<:>
 set history=100
-set t_Co=256
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+if &term =~ '256color'
+    set t_Co=256
+    set termguicolors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 set clipboard=unnamed
 set mouse=nv
 set tags+=tags;
@@ -185,7 +187,10 @@ nmap vdir <ESC>:Vexplore<CR>
 nmap mks <ESC>:mksession!<CR>
 nmap oct <ESC>:echo 0x
 nmap hex <ESC>:echo printf('%x',
-nnoremap tt <ESC>:vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
+nmap wdiff <ESC>:windo diffthis<CR>
+nnoremap tt <ESC>:vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR>
+nnoremap ts <ESC>:sp<CR> : cstag <C-R>=expand("<cword>")<CR><CR>
+nnoremap tv <ESC>:vs<CR> : cstag <C-R>=expand("<cword>")<CR><CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
 "nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
 "nnoremap <F5> <C-w>T
