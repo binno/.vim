@@ -4,6 +4,7 @@ if(has("win32") || has("win95") || has("win64") || has("win16"))
 else
     let g:iswindows=0
 endif
+let mapleader=","
 
 set encoding=utf-8
 set fenc=cp936
@@ -153,6 +154,8 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+let NERDTreeWinSize=25
+nnoremap <leader>r :NERDTreeFind<CR>
 
 " ========== Plugin Setting End ==========
 
@@ -199,7 +202,7 @@ map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q --exclu
 nmap + <C-W>+
 nmap - <C-W>-
 nmap <C-l>  <C-w>>
-nmap <C-h>  <C-w><
+"nmap <C-H>  <C-w><
 nmap dir  <ESC>:Explore<CR>
 nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
@@ -216,18 +219,17 @@ nmap <C-w>w <ESC>:windo set wrap<CR>
 "nnoremap <Space><Space> :q<CR>
 "nmap ff :vimgrep /<c-r>=expand("<cword>")<cr>/ %<cr> !:copen <Enter>
 
-let mapleader=","
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
-nnoremap <leader>r :source $MYVIMRC<CR>
+nnoremap <leader>R :source $MYVIMRC<CR>
 func! CompileRunGcc()
     exec "w"
     if &filetype == 'python'
         exec "!time python3 %"
     endif
 endfunc
-nnoremap <leader>jr :call CompileRunGcc()<CR>
+nnoremap <leader>pr :call CompileRunGcc()<CR>
 nnoremap <leader>vd :!git d %<CR>
 " ========== VIM Self Color Setting ==========
 highlight MyTabSpace guifg=Yellow ctermfg=Yellow
