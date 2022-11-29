@@ -54,6 +54,7 @@ endif
 set clipboard=unnamed
 set mouse=nv
 set tags+=tags;
+set fillchars+=vert:\│
 " ========== Basic VIM Setting End==========
 
 " Vundle setting
@@ -134,7 +135,25 @@ Plugin 'airblade/vim-gitgutter'
 let g:gitgutter_sign_added = 'A'
 let g:gitgutter_sign_modified = 'M'
 let g:gitgutter_sign_removed = 'D'
+highlight GitGutterAdd    ctermfg=blue
+highlight GitGutterChange ctermfg=green
+highlight GitGutterDelete ctermfg=red
 set updatetime=250
+set signcolumn=yes
+
+Plugin 'preservim/nerdtree'
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+nnoremap <F5> :NERDTreeToggle<CR>
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+
 " ========== Plugin Setting End ==========
 
 filetype plugin indent on " required
@@ -174,7 +193,7 @@ map L <ESC>:tabnext<CR>
 map H <ESC>:tabprev<CR>
 map ( <ESC>:-tabmove<CR>
 map ) <ESC>:+tabmove<CR>
-map <C-t>n <ESC>:Texplore <bar><CR>
+"map <C-t>n <ESC>:Texplore <bar><CR>
 nnoremap cc <ESC>:q<CR>
 map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q --exclude="*.mem" .<CR>
 nmap + <C-W>+
