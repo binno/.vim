@@ -158,6 +158,8 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 let NERDTreeWinSize=25
 nnoremap <leader>r :NERDTreeFind<CR>
 
+Plugin 'derekwyatt/vim-scala'
+
 " ========== Plugin Setting End ==========
 
 filetype plugin indent on " required
