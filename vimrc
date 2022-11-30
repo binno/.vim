@@ -211,7 +211,7 @@ nmap mks <ESC>:mksession!<CR>
 nmap oct <ESC>:echo 0x
 nmap hex <ESC>:echo printf('%x',
 nmap wdiff <ESC>:windo diffthis<CR>
-nnoremap tt <ESC>:sp<CR> : cstag <C-R>=expand("<cword>")<CR><CR>
+nnoremap tt <ESC>:27 sp<CR> : cstag <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>w <ESC><C-w>T<CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
 "nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
