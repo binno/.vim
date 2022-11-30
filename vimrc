@@ -27,9 +27,9 @@ set nu                      " line number
 set hlsearch                " high light search
 set incsearch
 set cursorline              " Highlight current line
-set shiftwidth=4            " tab key expression
+set shiftwidth=2            " tab key expression
 set ai                      " auto-indent
-set tabstop=4
+set tabstop=2
 set expandtab
 set cin
 set textwidth=80

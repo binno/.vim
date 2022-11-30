@@ -8,3 +8,4 @@ alias [HOME]/.tmux.conf .vim/tmux-conf (&& source it)
 alias [HOME]/.gitconfig .vim/gitconfig
 alias [HOME]/.git-prompt.sh git-prompt.sh
 alias /etc/bash_completion .vim/completion
+alias [HOME]/.ctags ctags_scala
