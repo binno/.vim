@@ -56,6 +56,7 @@ set clipboard=unnamed
 set mouse=nv
 set tags+=tags;
 set fillchars+=vert:\│
+set splitbelow
 " ========== Basic VIM Setting End==========
 
 " Vundle setting
@@ -210,9 +211,8 @@ nmap mks <ESC>:mksession!<CR>
 nmap oct <ESC>:echo 0x
 nmap hex <ESC>:echo printf('%x',
 nmap wdiff <ESC>:windo diffthis<CR>
-nnoremap tt <ESC>:vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR>
-nnoremap ts <ESC>:sp<CR> : cstag <C-R>=expand("<cword>")<CR><CR>
-nnoremap tv <ESC>:vs<CR> : cstag <C-R>=expand("<cword>")<CR><CR>
+nnoremap tt <ESC>:sp<CR> : cstag <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>w <ESC><C-w>T<CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
 "nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
 "nnoremap <F5> <C-w>T
@@ -223,6 +223,7 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
 nnoremap <leader>R :source $MYVIMRC<CR>
+nnoremap <leader><leader> :e<CR>
 func! CompileRunGcc()
     exec "w"
     if &filetype == 'python'
