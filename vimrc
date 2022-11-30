@@ -32,7 +32,7 @@ set ai                      " auto-indent
 set tabstop=2
 set expandtab
 set cin
-set textwidth=80
+"set textwidth=80
 set termencoding=utf-8
 set fileformats=unix,dos,mac
 set ff=unix                 " current file format
