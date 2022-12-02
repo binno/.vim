@@ -12,7 +12,7 @@ alias make="nice make"
 alias mk='nice make'
 alias grep='grep --color -I -n -i'
 alias rgrep='grep -R --exclude="tags"'
-alias indent='indent -gnu -bli0 -i4 -cli4 -nut -nip -npsl -nhnl'
+alias indent='indent -gnu -bli0 -i2 -cli2 -nut -nip -npsl -nhnl'
 alias df='df -h'
 alias cp='cp -rf'
 alias jb='jobs'
@@ -38,5 +38,5 @@ alias tmux='tmux -2'
 alias tmuxls='tmux ls'
 alias tmuxat='tmux attach-session -t'
 
-# find -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.h' -o -name '*.py' -o -name '*.S' -o -name '*.cc'
+# find -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.h' -o -name '*.hpp' -o -name '*.py' -o -name '*.S' -o -name '*.cc' -o -name '*.scala'
 # -type d -name node_modules -prune
