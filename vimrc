@@ -46,12 +46,6 @@ set tabpagemax=100          " set tab page expression
 set numberwidth=5
 set matchpairs+=<:>
 set history=100
-if &term =~ '256color'
-    set t_Co=256
-    set termguicolors
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
 set clipboard=unnamed
 set mouse=nv
 set tags+=tags;
@@ -82,6 +76,7 @@ Plugin 'tomasr/molokai'
 colorscheme molokai
 let g:molokai_original = 1
 
+set guifont=Monaco:h10 noanti
 set background=dark
 
 Plugin 'itchyny/lightline.vim'
@@ -156,7 +151,7 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 let NERDTreeWinSize=27
 nnoremap <F5> :NERDTreeToggle<CR> :wincmd p<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>f :NERDTreeFind<CR> :wincmd p<CR>
 
 Plugin 'derekwyatt/vim-scala'
 
@@ -201,7 +196,7 @@ map ( <ESC>:-tabmove<CR>
 map ) <ESC>:+tabmove<CR>
 "map <C-t>n <ESC>:Texplore <bar><CR>
 nnoremap cc <ESC>:q<CR>
-map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q --exclude="*.mem" .<CR>
+"map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q --exclude="*.mem" .<CR>
 nmap + <C-W>+
 nmap - <C-W>-
 nmap <C-l>  <C-w>>
