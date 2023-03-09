@@ -28,7 +28,7 @@ set hlsearch                " high light search
 set incsearch
 set cursorline              " Highlight current line
 set shiftwidth=2            " tab key expression
-set ai                      " auto-indent
+set cindent
 set tabstop=2
 set expandtab
 set cin
@@ -78,6 +78,7 @@ let g:molokai_original = 1
 
 set guifont=Monaco:h10 noanti
 set background=dark
+hi Visual cterm=reverse gui=reverse
 
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
@@ -150,7 +151,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 let NERDTreeWinSize=27
-nnoremap <F5> :NERDTreeToggle<CR> :wincmd p<CR>
+" nnoremap <F5> :NERDTreeToggle<CR> :wincmd p<CR>
 nnoremap <leader>f :NERDTreeFind<CR> :wincmd p<CR>
 
 Plugin 'derekwyatt/vim-scala'
@@ -204,9 +205,29 @@ nmap <C-l>  <C-w>>
 nmap dir  <ESC>:Explore<CR>
 nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
+nmap <Leader>t  <ESC>:tabnew<CR>:Explore<CR>
+nmap <Leader>T :NERDTreeToggle<CR> :wincmd p<CR>
 nmap mks <ESC>:mksession!<CR>
-nmap oct <ESC>:echo 0x
-nmap hex <ESC>:echo printf('%x',
+
+fu! StartsWith(longer, shorter) abort
+  return a:longer[0:len(a:shorter)-1] ==# a:shorter
+endfunction
+function! ToOctFunc()
+  let current_word = expand("<cword>")
+  if StartsWith(current_word, "0x")
+    execute ":echo " . current_word
+  else
+    execute ":echo 0x" . current_word
+  endif
+endfunction
+nnoremap <Leader>o :call ToOctFunc()<CR>
+
+function! ToHexFunc()
+  let current_word = expand("<cword>")
+  execute ":echo printf('%x', " . current_word . ")"
+endfunction
+nnoremap <Leader>h :call ToHexFunc()<CR>
+
 nmap wdiff <ESC>:windo diffthis<CR>
 nnoremap tt <ESC>:33 sp<CR> : cstag <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>w <ESC><C-w>T :e<CR>

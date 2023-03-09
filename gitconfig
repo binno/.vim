@@ -13,6 +13,9 @@
     editor = vim
     pager = less -FXRS
 
+[log]
+    date = local
+
 [alias]
     addi = add -i
     rmc = rm --cached
