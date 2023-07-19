@@ -70,8 +70,8 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " ========== Plugin Setting ==========
-" Plugin 'lifepillar/vim-solarized8.git'
-" colorscheme solarized8_high
+"Plugin 'lifepillar/vim-solarized8.git'
+"colorscheme solarized8_high
 Plugin 'tomasr/molokai'
 colorscheme molokai
 let g:molokai_original = 1

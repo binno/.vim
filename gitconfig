@@ -59,7 +59,7 @@
     bs = bisect
 
     rsh = reset --hard
-    rt = restore
+    rs = restore
 
     #git arc --prefix=[dir name] HEAD |gzip > [name].tar.gz
     arc = archive --format=tar
