@@ -70,8 +70,8 @@ export HISTCONTROL=ignoredups
 #export LM_LICENSE_FILE=1717@lscic3
 #export MODELSIM_HOME=/usr/cad/mentor/modelsim/cur
 
-bind '"\C-p":history-search-backward'
-bind '"\C-n":history-search-forward'
+bind '"\ek":history-search-backward'
+bind '"\ej":history-search-forward'
 
 export PATH=/home/bshen/.vim/bundle/gj/bin:"$PATH"
 

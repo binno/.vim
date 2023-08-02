@@ -76,7 +76,7 @@ Plugin 'tomasr/molokai'
 colorscheme molokai
 let g:molokai_original = 1
 
-set guifont=Monaco:h10 noanti
+set guifont=monospace\ 12
 set background=dark
 hi Visual cterm=reverse gui=reverse
 
