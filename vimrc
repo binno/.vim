@@ -153,6 +153,7 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 let NERDTreeWinSize=27
 " nnoremap <F5> :NERDTreeToggle<CR> :wincmd p<CR>
 nnoremap <leader>f :NERDTreeFind<CR> :wincmd p<CR>
+nmap <Leader>t :NERDTreeToggle<CR> :wincmd p<CR>
 
 Plugin 'derekwyatt/vim-scala'
 
@@ -200,13 +201,12 @@ nnoremap cc <ESC>:q<CR>
 "map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q --exclude="*.mem" .<CR>
 nmap + <C-W>+
 nmap - <C-W>-
-nmap <C-l>  <C-w>>
-"nmap <C-H>  <C-w><
+execute "set <A-=>=\e="
+nmap <A-=>  <C-w>>
 nmap dir  <ESC>:Explore<CR>
 nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
-nmap <Leader>t  <ESC>:tabnew<CR>:Explore<CR>
-nmap <Leader>T :NERDTreeToggle<CR> :wincmd p<CR>
+nmap <Leader>T  <ESC>:tabnew<CR>:Explore<CR>
 nmap mks <ESC>:mksession!<CR>
 
 fu! StartsWith(longer, shorter) abort
