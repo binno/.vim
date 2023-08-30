@@ -23,7 +23,7 @@ white="\[\033[1;37m\]"
 Magenta="\[\033[1;35m\]"
 no="\[\033[0m\]"
 gitps1='$(__git_ps1 "<%s>")'
-PS1="$green\d \@ $blue[\w]\n$cyan\u@$red\h$white:$yellow[\W]$red$gitps1$blue\$ $no"
+PS1="$yellow[\w]\n$cyan\u@$green\h$white:$red$gitps1$blue\$ $no"
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
