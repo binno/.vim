@@ -230,7 +230,8 @@ nnoremap <Leader>h :call ToHexFunc()<CR>
 
 nmap wdiff <ESC>:windo diffthis<CR>
 nnoremap tt <ESC>:33 sp<CR> : cstag <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>w <ESC><C-w>T :e<CR>
+execute "set <A-w>=\ew"
+nnoremap <A-w> <ESC><C-w>T :e<CR>
 nmap <C-w>w <ESC>:windo set wrap<CR>
 "nnoremap <2-LeftMouse> :vs<CR> <C-w>T : cstag <C-R>=expand("<cword>")<CR><CR> <C-w>T
 "nnoremap <F5> <C-w>T
@@ -242,6 +243,7 @@ vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
 nnoremap <leader>R :source $MYVIMRC<CR>
 nnoremap <leader><leader> :e<CR>
+nnoremap <leader>s :set spell!<CR>
 func! CompileRunGcc()
     exec "w"
     if &filetype == 'python'
