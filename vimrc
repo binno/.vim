@@ -48,6 +48,7 @@ set matchpairs+=<:>
 set history=100
 set clipboard=unnamed
 set mouse=nv
+set ttymouse=xterm2
 set tags+=tags;
 set fillchars+=vert:\│
 set splitbelow
@@ -194,15 +195,15 @@ nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
 map <Esc><Esc> :w!<CR>
 map L <ESC>:tabnext<CR>
 map H <ESC>:tabprev<CR>
-map ( <ESC>:-tabmove<CR>
-map ) <ESC>:+tabmove<CR>
+"map ( <ESC>:-tabmove<CR>
+"map ) <ESC>:+tabmove<CR>
 "map <C-t>n <ESC>:Texplore <bar><CR>
 nnoremap cc <ESC>:q<CR>
 "map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q --exclude="*.mem" .<CR>
-nmap + <C-W>+
-nmap - <C-W>-
-execute "set <A-=>=\e="
-nmap <A-=>  <C-w>>
+"nmap + <C-W>+
+"nmap - <C-W>-
+"execute "set <A-=>=\e="
+"nmap <A-=>  <C-w>>
 nmap dir  <ESC>:Explore<CR>
 nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
