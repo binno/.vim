@@ -22,8 +22,10 @@ cyan="\[\033[1;36m\]"
 white="\[\033[1;37m\]"
 Magenta="\[\033[1;35m\]"
 no="\[\033[0m\]"
+reverse="\[\033[1;7m\]"
 gitps1='$(__git_ps1 "<%s>")'
-PS1="$yellow[\w]\n$cyan\u@$green\h$white:$red$gitps1$blue\$ $no"
+#PS1="$reverse$cyan[\w]$no\n$red\u$blue@$Magenta\h$yellow$gitps1$blue\$ $no"
+PS1="$reverse$cyan[\w]$no\n$red\u$blue@$green\h$yellow$gitps1$blue\$ $no"
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -70,8 +72,8 @@ export HISTCONTROL=ignoredups
 #export LM_LICENSE_FILE=1717@lscic3
 #export MODELSIM_HOME=/usr/cad/mentor/modelsim/cur
 
-bind '"\ek":history-search-backward'
-bind '"\ej":history-search-forward'
+bind '"\ep":history-search-backward'
+bind '"\en":history-search-forward'
 
 export PATH=/home/bshen/.vim/bundle/gj/bin:"$PATH"
 
