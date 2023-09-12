@@ -25,7 +25,7 @@ no="\[\033[0m\]"
 reverse="\[\033[1;7m\]"
 gitps1='$(__git_ps1 "<%s>")'
 #PS1="$reverse$cyan[\w]$no\n$red\u$blue@$Magenta\h$yellow$gitps1$blue\$ $no"
-PS1="$reverse$cyan[\w]$no\n$red\u$blue@$green\h$yellow$gitps1$blue\$ $no"
+PS1="$reverse$cyan-> \w$no\n$red\u$yellow@$green\h$yellow$gitps1$yellow\$ $no"
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases

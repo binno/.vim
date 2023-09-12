@@ -50,7 +50,7 @@ set clipboard=unnamed
 set mouse=n
 set ttymouse=xterm2
 set tags+=tags;
-set fillchars+=vert:\│
+set fillchars=vert:\│
 set splitbelow
 " ========== Basic VIM Setting End==========
 
