@@ -83,10 +83,23 @@ hi Visual cterm=reverse gui=reverse
 
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
-      \ 'colorscheme': 'deus',
+      \ 'colorscheme': 'PaperColor',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'modified', 'absolutepath' ] ],
-      \ }
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'modified', 'filename' ] ],
+      \ },
+      \ 'mode_map': {
+        \ 'n' : 'N',
+        \ 'i' : 'I',
+        \ 'R' : 'R',
+        \ 'v' : 'V',
+        \ 'V' : 'VL',
+        \ "\<C-v>": 'VB',
+        \ 'c' : 'C',
+        \ 's' : 'S',
+        \ 'S' : 'SL',
+        \ "\<C-s>": 'SB',
+        \ 't': 'T',
+        \ },
       \ }
 
 Plugin 'majutsushi/tagbar'
@@ -239,12 +252,14 @@ nmap <C-w>w <ESC>:windo set wrap<CR>
 "nnoremap <Space><Space> :q<CR>
 "nmap ff :vimgrep /<c-r>=expand("<cword>")<cr>/ %<cr> !:copen <Enter>
 
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
-vnoremap <leader>p "_dP
+"nnoremap <leader>d "_d
+"vnoremap <leader>d "_d
+"vnoremap <leader>p "_dP
 nnoremap <leader>R :source $MYVIMRC<CR>
 nnoremap <leader><leader> :e<CR>
+nnoremap <leader>p :set paste!<CR>
 nnoremap <leader>s :set spell!<CR>
+nnoremap <leader>n :set nu!<CR>
 func! CompileRunGcc()
     exec "w"
     if &filetype == 'python'
