@@ -165,9 +165,9 @@ let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 let NERDTreeWinSize=27
-" nnoremap <F5> :NERDTreeToggle<CR> :wincmd p<CR>
 nnoremap <leader>f :NERDTreeFind<CR> :wincmd p<CR>
-nmap <Leader>t :NERDTreeToggle<CR> :wincmd p<CR>
+nmap <leader>t :NERDTreeToggle<CR> :wincmd p<CR>
+Plugin 'jistr/vim-nerdtree-tabs'
 
 Plugin 'derekwyatt/vim-scala'
 
