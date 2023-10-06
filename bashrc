@@ -14,17 +14,28 @@ fi
 # set a fancy prompt
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
-blue="\[\033[1;34m\]"
-green="\[\033[1;32m\]"
-yellow="\[\033[1;33m\]"
-red="\[\033[1;31m\]"
-cyan="\[\033[1;36m\]"
-white="\[\033[1;37m\]"
-Magenta="\[\033[1;35m\]"
-no="\[\033[0m\]"
-reverse="\[\033[1;7m\]"
-gitps1='$(__git_ps1 "<%s>")'
-PS1="$reverse$cyan-> \w$no\n$green\u$yellow@$red\h$yellow$gitps1$yellow\$ $no"
+C_REVERSE="\[\e[1;7m\]"
+C_NC="\[\e[0m\]" # No Color
+C_BLACK="\[\e[0;30m\]"
+C_GRAY="\[\e[1;30m\]"
+C_RED="\[\e[0;31m\]"
+C_L_RED="\[\e[1;31m\]"
+C_GREEN="\[\e[0;32m\]"
+C_L_GREEN="\[\e[1;32m\]"
+C_BROWN="\[\e[0;33m\]"
+C_YELLOW="\[\e[1;33m\]"
+C_BLUE="\[\e[0;34m\]"
+C_L_BLUE="\[\e[1;34m\]"
+C_PURPLE="\[\e[0;35m\]"
+C_L_PURPLE="\[\e[1;35m\]"
+C_CYAN="\[\e[0;36m\]"
+C_L_CYAN="\[\e[1;36m\]"
+C_L_GRAY="\[\e[0;37m\]"
+C_WHITE="\[\e[1;37m\]"
+s_triangle=$'\uE0B0'
+
+gitps1='$(__git_ps1 "⚓%s")'
+PS1="\[\e[0;30;44m\]$s_triangle\[\e[0;30;44m\] \w $C_BLUE$s_triangle$C_NC\n$C_L_GREEN\u$C_NC☯$C_L_RED\h$C_YELLOW$gitps1$C_BLUE$ $C_NC"
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
