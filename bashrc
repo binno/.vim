@@ -34,8 +34,8 @@ C_L_GRAY="\[\e[0;37m\]"
 C_WHITE="\[\e[1;37m\]"
 s_triangle=$'\uE0B0'
 
-gitps1='$(__git_ps1 "⚓%s")'
-PS1="\[\e[0;30;104m\]==>$C_NC $C_PURPLE\w$C_NC\n$C_GREEN\u$C_NC☯$C_BROWN\h$C_L_RED$gitps1$C_L_CYAN$ $C_NC"
+gitps1='$(__git_ps1 "<%s>")'
+PS1="\[\e[0;30;104m\]==>$C_NC $C_PURPLE\w$C_NC\n$C_GREEN\u$C_L_CYAN@$C_BROWN\h$C_RED$gitps1$C_L_CYAN$ $C_NC"
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
