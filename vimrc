@@ -272,3 +272,5 @@ nnoremap <leader>vd :!git d %<CR>
 highlight MyTabSpace guifg=Yellow ctermfg=Yellow
 match MyTabSpace /\t\| /
 set listchars=tab:>~,trail:@
+
+hi CursorLine ctermfg=NONE ctermbg=16 cterm=NONE
