@@ -212,6 +212,7 @@ map H <ESC>:tabprev<CR>
 "map ) <ESC>:+tabmove<CR>
 "map <C-t>n <ESC>:Texplore <bar><CR>
 nnoremap cc <ESC>:q<CR>
+nnoremap CC <ESC>:q!<CR>
 "map <C-c> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q --exclude="*.mem" .<CR>
 "nmap + <C-W>+
 "nmap - <C-W>-
@@ -260,6 +261,8 @@ nnoremap <leader><leader> :e<CR>
 nnoremap <leader>p :set paste!<CR>
 nnoremap <leader>s :set spell!<CR>
 nnoremap <leader>n :set nu!<CR>
+nnoremap <leader>m :marks abcdefghijklmnopqrstuvwxyz<CR>
+nnoremap <leader>z :new<CR><C-w>J<ESC>p<CR>:set nu!<CR>
 func! CompileRunGcc()
     exec "w"
     if &filetype == 'python'
