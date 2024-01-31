@@ -277,3 +277,5 @@ match MyTabSpace /\t\| /
 set listchars=tab:>~,trail:@
 
 hi CursorLine ctermfg=NONE ctermbg=17 cterm=NONE
+
+set wildignore+=tags
