@@ -52,6 +52,7 @@ set ttymouse=xterm2
 set tags+=tags;
 set fillchars=vert:\│
 set splitbelow
+set updatetime=250
 " ========== Basic VIM Setting End==========
 
 " Vundle setting
@@ -106,7 +107,6 @@ Plugin 'majutsushi/tagbar'
 let g:tagbar_ctags_bin='ctags'
 let g:tagbar_width=20
 "let g:tagbar_left = 1
-set updatetime=500
 nmap <F8> :TagbarToggle<CR>
 
 Plugin 'wesleyche/SrcExpl'
@@ -150,7 +150,6 @@ let g:gitgutter_sign_removed = 'D'
 highlight GitGutterAdd    ctermfg=blue
 highlight GitGutterChange ctermfg=green
 highlight GitGutterDelete ctermfg=red
-set updatetime=250
 set signcolumn=yes
 
 Plugin 'preservim/nerdtree'
@@ -221,7 +220,7 @@ nnoremap CC <ESC>:q!<CR>
 nmap dir  <ESC>:Explore<CR>
 nmap sdir <ESC>:Sexplore<CR>
 nmap vdir <ESC>:Vexplore<CR>
-nmap <Leader>T  <ESC>:tabnew<CR>:Explore<CR>
+nmap <leader>T  <ESC>:tabnew<CR>:Explore<CR>
 nmap mks <ESC>:mksession!<CR>
 
 fu! StartsWith(longer, shorter) abort
@@ -235,13 +234,13 @@ function! ToOctFunc()
     execute ":echo 0x" . current_word
   endif
 endfunction
-nnoremap <Leader>o :call ToOctFunc()<CR>
+nnoremap <leader>o :call ToOctFunc()<CR>
 
 function! ToHexFunc()
   let current_word = expand("<cword>")
   execute ":echo printf('%x', " . current_word . ")"
 endfunction
-nnoremap <Leader>h :call ToHexFunc()<CR>
+nnoremap <leader>h :call ToHexFunc()<CR>
 
 nmap wdiff <ESC>:windo diffthis<CR>
 nnoremap tt <ESC>:33 sp<CR> : cstag <C-R>=expand("<cword>")<CR><CR>
@@ -257,6 +256,7 @@ nmap <C-w>w <ESC>:windo set wrap<CR>
 "vnoremap <leader>d "_d
 "vnoremap <leader>p "_dP
 nnoremap <leader>R :source $MYVIMRC<CR>
+nnoremap <leader>Q :qa<CR>
 nnoremap <leader><leader> :e<CR>
 nnoremap <leader>p :set paste!<CR>
 nnoremap <leader>s :set spell!<CR>
