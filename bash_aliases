@@ -39,5 +39,8 @@ alias tmux='tmux -2'
 alias tmuxls='tmux ls'
 alias tmuxat='tmux attach-session -t'
 
+#up dir
+source ~/.vim/up.sh
+
 # find -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.h' -o -name '*.hpp' -o -name '*.py' -o -name '*.S' -o -name '*.cc' -o -name '*.scala'
 # -type d -name node_modules -prune
