@@ -30,6 +30,7 @@ alias w3mgoogle='w3m -num http://www.google.com.tw'
 alias python='python -t'
 alias rp='realpath'
 alias git_clean_ref='git for-each-ref --format="%(refname)" | while read ref; do git show-ref --quiet --verify $ref 2>/dev/null || git update-ref -d $ref; done'
+alias wtf='curl zh-tw.wttr.in/taiwan?mM'
 
 #ruby setting
 alias gems='gem search -r'
