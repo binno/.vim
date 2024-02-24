@@ -154,7 +154,6 @@ set signcolumn=yes
 
 Plugin 'preservim/nerdtree'
 " Start NERDTree and put the cursor back in the other window.
-"autocmd VimEnter * NERDTree | wincmd p
 autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -263,14 +262,15 @@ nnoremap <leader>s :set spell!<CR>
 nnoremap <leader>n :set nu!<CR>
 nnoremap <leader>m :marks abcdefghijklmnopqrstuvwxyz<CR>
 nnoremap <leader>z :new<CR><C-w>J<ESC>p<CR>:set nu!<CR>
-nnoremap <leader>g :cw<CR><C-w>J<ESC>
-func! CompileRunGcc()
+command -nargs=1 QuickGrep :vimgrep "<args>" %|:botright cw
+nnoremap <leader>g :QuickGrep
+func! PythonRun()
     exec "w"
     if &filetype == 'python'
         exec "!time python3 %"
     endif
 endfunc
-nnoremap <leader>pr :call CompileRunGcc()<CR>
+nnoremap <leader>pr :call PythonRun()<CR>
 nnoremap <leader>vd :!git d %<CR>
 " ========== VIM Self Color Setting ==========
 highlight MyTabSpace guifg=Yellow ctermfg=Yellow
