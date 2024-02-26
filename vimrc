@@ -263,7 +263,7 @@ nnoremap <leader>n :set nu!<CR>
 nnoremap <leader>m :marks abcdefghijklmnopqrstuvwxyz<CR>
 nnoremap <leader>z :new<CR><C-w>J<ESC>p<CR>:set nu!<CR>
 command -nargs=1 QuickGrep :vimgrep "<args>" %|:botright cw
-nnoremap <leader>g :QuickGrep
+nnoremap <leader>g :QuickGrep 
 func! PythonRun()
     exec "w"
     if &filetype == 'python'
