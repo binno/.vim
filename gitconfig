@@ -52,7 +52,7 @@
     lg = lga -10
     lgp = log -p
     lgs = log --stat -1
-    lgu = lg --author
+    lgu = lga --author
 
     bl = blame
     so = show

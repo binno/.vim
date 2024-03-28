@@ -262,8 +262,21 @@ nnoremap <leader>s :set spell!<CR>
 nnoremap <leader>n :set nu!<CR>
 nnoremap <leader>m :marks abcdefghijklmnopqrstuvwxyz<CR>
 nnoremap <leader>z :new<CR><C-w>J<ESC>p<CR>:set nu!<CR>
-command -nargs=1 QuickGrep :vimgrep "<args>" %|:botright cw
-nnoremap <leader>g :QuickGrep 
+"command -nargs=1 QuickGrep :vimgrep "<args>" %|:botright cw
+"nnoremap <leader>g :QuickGrep
+function! QuickGrep()
+  if exists("g:qfix_win")
+    cclose
+    unlet g:qfix_win
+  else
+    normal! gv"xy
+    let search_word = getreg("x")
+    execute ":vimgrep " . search_word . " %"
+    botright cw
+    let g:qfix_win = bufnr("$")
+  endif
+endfunction
+nnoremap <leader>g :call QuickGrep()<CR>
 func! PythonRun()
     exec "w"
     if &filetype == 'python'
