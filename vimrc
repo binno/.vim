@@ -263,19 +263,26 @@ nnoremap <leader>n :set nu!<CR>
 nnoremap <leader>m :marks abcdefghijklmnopqrstuvwxyz<CR>
 nnoremap <leader>z :new<CR><C-w>J<ESC>p<CR>:set nu!<CR>
 nnoremap term :botright term<CR><C-w>
-function! QuickGrep()
+function! QuickGrep(type)
   if exists("g:qfix_win")
     cclose
     unlet g:qfix_win
   else
     normal! gv"xy
-    let search_word = getreg("x")
-    execute ":vimgrep " . search_word . " %"
+    if (a:type == "regex")
+      call inputsave()
+      let l:search_word = input('Enter regex: ')
+      call inputrestore()
+    else
+      let l:search_word = getreg("x")
+    endif
+    execute ":vimgrep \"" . l:search_word . "\" %"
     botright cw
     let g:qfix_win = bufnr("$")
   endif
 endfunction
-nnoremap <leader>g :call QuickGrep()<CR>
+nnoremap <leader>g :call QuickGrep("")<CR>
+nnoremap <leader>G :call QuickGrep("regex")<CR>
 func! PythonRun()
     exec "w"
     if &filetype == 'python'
